@@ -17,7 +17,7 @@ void destroyStack(Stack** stack_ptr)
 	{
 		return;
 	}
-	while(getStackSize != 0)
+	while(getStackSize(*stack_ptr) != 0)
 	{
 		pop(*stack_ptr);
 	}
