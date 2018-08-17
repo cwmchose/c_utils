@@ -1,11 +1,11 @@
-#IFNDEF NODE_H
-#DEFINE NODE_H
+#ifndef NODE_H
+#define NODE_H
 
 
 /* Structure */
 typedef struct Node
 {
-	Node* next;
+	struct	Node* next;
 	void* data;
 }Node;
 
@@ -21,3 +21,5 @@ int setNext(Node* node, Node* next);
 int hasNext(Node* node);
 Node* getNext(Node* node);
 void* getData(Node* node);
+
+#endif
