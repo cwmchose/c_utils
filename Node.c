@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "Node.h"
 
 //  Initializes new node struct
@@ -6,14 +7,14 @@ Node* createNode(void* data)
 {
 	if(data == NULL)
 	{
-		printerr("Null reference to data");
+		printf("Null reference to data");
 		return NULL;
 	}
 
 	Node* node = malloc(sizeof(Node*));
 	if(node == NULL)
 	{
-		printerr("we fucked");
+		printf("we fucked");
 		return NULL;
 	}
 
@@ -30,7 +31,7 @@ void* destroyNode(Node** node_ptr)
 	//  Returns NULL if reference to node pointer does not exist
 	if(node_ptr == NULL)
 	{
-		printerr("Pointer to node pointer was null");
+		printf("Pointer to node pointer was null");
 		return NULL;
 	}
 	//  Returns NULL if dereferenced node pointer does not exist
@@ -61,7 +62,7 @@ int setNext(Node* node, Node* next)
 {
 	if(node == NULL || next == NULL)
 	{
-		printerr("Starting node or next node was null");
+		printf("Starting node or next node was null");
 		return FALSE;
 	}
 
@@ -74,7 +75,7 @@ Node* getNext(Node* node)
 {
 	if(node == NULL)
 	{
-		printerr("Current node was null");
+		printf("Current node was null");
 		return NULL;
 	}
 
@@ -86,11 +87,11 @@ int hasNext(Node* node)
 {
 	if(node == NULL)
 	{
-		printerr("Current node was null");
+		printf("Current node was null");
 		return FALSE;
 	}
 
-	if(node->next == null)
+	if(node->next == NULL)
 	{
 		return FALSE;
 	}
@@ -103,14 +104,10 @@ void* getData(Node* node)
 {
 	if(node == NULL)
 	{
-		printerr("Current node was null");
+		printf("Current node was null");
 		return NULL;
 	}
 
 	return node->data;
 
-}
-
-		printerr(
-	}
 }
