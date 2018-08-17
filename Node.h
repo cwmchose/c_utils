@@ -16,7 +16,7 @@ typedef struct Node
 
 /* Prototypes */
 Node* createNode(void* data);
-int destroyNode(Node** node); 
+void* destroyNode(Node** node); 
 int setNext(Node* node, Node* next);
 int hasNext(Node* node);
 Node* getNext(Node* node);
