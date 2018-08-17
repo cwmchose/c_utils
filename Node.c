@@ -11,7 +11,7 @@ Node* createNode(void* data)
 		return NULL;
 	}
 
-	Node* node = malloc(sizeof(Node*));
+	Node* node = (Node*) malloc(sizeof(Node*));
 	if(node == NULL)
 	{
 		printf("we fucked");
@@ -19,9 +19,9 @@ Node* createNode(void* data)
 	}
 
 
-	setNext(node, NULL); //  Default next node is null
+	//setNext(node, NULL); //  Default next node is null
+	node->next = NULL;
 	node->data = data;
-
 	return node;
 }
 
@@ -43,11 +43,11 @@ void* destroyNode(Node** node_ptr)
 	void* node_data = (*node_ptr)->data; //  Stores data reference before it's freed
 
 	//  Frees the reference to the next node
-	free((*node_ptr)->next);
+//	free((*node_ptr)->next);
 	(*node_ptr)->next = NULL;
 
 	//  Frees the reference to the node's data
-	free((*node_ptr)->data);
+//	free((*node_ptr)->data);
 	(*node_ptr)->data = NULL;
 
 	//  Frees the reference to the node
